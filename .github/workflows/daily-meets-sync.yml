@@ -1,26 +1,26 @@
 name: Daily Meets Sync
 
-# on:
-#   schedule:
-#     - cron: '0 2 * * *'  # Run daily at 02:00 UTC
-#   workflow_dispatch:     # Allow manual triggering
+ on:
+   schedule:
+     - cron: '0 2 * * *'  # Run daily at 02:00 UTC
+   workflow_dispatch:     # Allow manual triggering
 
-# jobs:
-#   sync-meets:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v4
+ jobs:
+   sync-meets:
+     runs-on: ubuntu-latest
+     steps:
+       - uses: actions/checkout@v4
       
-#       - name: Setup Node.js
-#         uses: actions/setup-node@v4
-#         with:
-#           node-version: '20'
+       - name: Setup Node.js
+         uses: actions/setup-node@v4
+         with:
+           node-version: '20'
           
-#       - name: Install dependencies
-#         run: npm install
+       - name: Install dependencies
+         run: npm install
         
-#       - name: Run meets sync script
-#         run: node scripts/sync-meets.js
-#         env:
-#           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-#           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }} 
+       - name: Run meets sync script
+         run: node scripts/sync-meets.js
+         env:
+           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }} 
