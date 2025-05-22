@@ -2,7 +2,7 @@ name: Daily Meets Sync
 
 on:
   schedule:
-    - cron: '0 2 * * *'  # Run daily at 02:00 UTC
+    - cron: '50 1 * * *'  # Run daily at 01:50 UTC
   workflow_dispatch:     # Allow manual triggering
 
 jobs:
